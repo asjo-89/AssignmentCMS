@@ -1,0 +1,23 @@
+:root {
+    --main-color: #4F5955;
+    --sub-color-1: #F2EDDC;
+    --sub-color-3: #D9C3A9;
+
+    --white: #FFFFFF;
+    --medium-grey: #E6E6E6;
+    --light-grey: #F7F7F7;
+    --extra-light-grey-1: #EAEAEA;
+    --extra-light-grey-2: #ECECEC;
+    --dark-grey: #4B5264;
+    --black: #0E0E0E;
+
+    --note-1: #9C9EA6;
+    --body-text: #535656;
+    --text-light: #999999;
+    --text-dark: #2D303A;
+
+    --input-border: #EBEBEB;
+    --input-placeholder: #AAAAAA;
+
+    --stars: #333333;
+}
