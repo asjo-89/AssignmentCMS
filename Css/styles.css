@@ -32,12 +32,42 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--body-text);
-    background-color: var(--light-grey);
-    line-height: 1.5;
+    background-color: var(--white);
+    line-height: 1;
 }
 
+h1 {
+    font-size: 1.5rem;
+
+    @media (min-width: 615px) {
+        font-size: 2.5rem;
+    }
+
+    @media (min-width: 1015px) {
+        font-size: 3.5rem;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: 4.3rem;
+    }
+}
+
+.btn {
+    background-color: var(--main-color);
+    color: var(--sub-color-1);
+    padding: 1em 2em;
+    border: none;
+    border-radius: .2em;
+}
+
+/* #region Header styles */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure the header stays above other content */
+}
 .head-contact-container {
     width: 100vw;
     display: flex;
@@ -101,8 +131,6 @@ body {
         }
     }
 }
-
-
 
 .nav-container {
     width: 100vw;
@@ -172,3 +200,44 @@ body {
         padding: .5rem;
     }
 }
+/* #endregion */
+
+/* #region Hero styles */
+.hero-wrapper {
+    width: 100%;
+    height: 100dvh;
+    min-height: 700px;
+
+    .hero {
+        width: 100%;
+        height: 50%;
+        background-image: url('../Images/HeroImage.svg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        padding: 2rem .5rem;
+
+        @media (min-width: 1000px) {
+            max-height: 500px;
+        }
+
+        & .container {
+            width: 50%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+
+            @media (min-width: 576px) {
+                gap: 2rem;
+            }
+
+            .btn-contact {
+                align-self: flex-start;
+            }
+        }
+    }
+}
+/* #endregion */
