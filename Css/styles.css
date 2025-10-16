@@ -131,13 +131,23 @@ body {
         display: flex;
         align-items: center;
         gap: 1rem;
+
+        @media (min-width: 576px) {
+            .fa-ellipsis-vertical {
+                display: none;
+            }
+        }
     }
 
     .menu {
-        list-style: none;
-        display: flex;
-        gap: 2rem;
-        padding-right: 2rem;
+        display: none;
+        
+        @media (min-width: 576px) {
+            display: flex;
+            gap: clamp(1rem, 1rem + 5vw, 5rem);
+            padding-right: 2rem;
+            list-style: none;
+        }
 
         .menu-item a {
             text-decoration: none;
@@ -146,6 +156,12 @@ body {
             font-size: .8rem;
             padding: 1rem 0;
             display: block;
+            transition: color .2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .menu-item a:hover, .menu-item a:focus {
+            color: var(--sub-color-3);
         }
     }
 
