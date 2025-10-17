@@ -25,6 +25,7 @@
 
     --input-border: #EBEBEB;
     --input-placeholder: #AAAAAA;
+    --shadow-color: #5356566b;
 
     --stars: #333333;
     --line-color: #636b68;
@@ -32,12 +33,77 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--body-text);
-    background-color: var(--light-grey);
-    line-height: 1.5;
+    background-color: var(--white);
+    line-height: 1;
 }
 
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    @media (min-width: 615px) {
+        font-size: 2.5rem;
+    }
+
+    @media (min-width: 1015px) {
+        font-size: 3.5rem;
+    }
+
+    @media (min-width: 1220px) {
+        font-size: 4.3rem;
+    }
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    @media (min-width: 615px) {
+        font-size: 1.8rem;
+    }
+
+    @media (min-width: 1100px) {
+        font-size: 2.5rem;
+    }
+
+    @media (min-width: 1260px) {
+        font-size: 3rem;
+    }
+}
+
+.btn {
+    background-color: var(--main-color);
+    color: var(--sub-color-1);
+    padding: 1.2em 2em;
+    border: none;
+    border-radius: .3em;
+}
+
+.input {
+    padding: 1.4em;
+    border: 1px solid var(--input-border);
+    border-radius: .3em;
+    font-size: .8rem;
+    font-style: italic;
+    color: var(--note-1);
+
+    &:active, &:focus {
+        outline: none;
+        border: 1px solid var(--note-1);
+        color: var(--body-text);
+        background-color: var(--light-grey);
+        font-style: normal;
+    }
+}
+
+/* #region Header styles */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure the header stays above other content */
+}
 .head-contact-container {
     width: 100vw;
     display: flex;
@@ -102,15 +168,13 @@ body {
     }
 }
 
-
-
 .nav-container {
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--white);
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 5px var(--shadow-color);
     padding: .7rem;
 
     .nav {
@@ -172,3 +236,170 @@ body {
         padding: .5rem;
     }
 }
+/* #endregion */
+
+/* #region Hero styles */
+.hero-wrapper {
+    width: 100%;
+    min-height: 100dvh;
+    min-height: 700px;
+
+    .hero {
+        flex: 1;
+        min-height: 300px;
+        background-image: url('../Images/HeroImage.svg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem .5rem;
+
+        @media (min-width: 1000px) {
+            max-height: 500px;
+        }
+
+        & .container {
+            width: 100%;
+            max-width: 1200px;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+
+            @media (min-width: 576px) {
+                gap: 2rem;
+            }
+
+            .btn-contact {
+                align-self: flex-start;
+            }
+        }
+
+        .container p {
+            max-width: 50%;
+        }
+    }
+
+    .about-us {
+        flex: 1;
+        min-height: 300px;
+        padding: 1.5rem .5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (min-width: 920px) {
+            flex-direction: row;
+        }
+        
+        & .container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 3rem;
+
+            @media (min-width: 920px) {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 1rem;
+                margin-top: -70px;
+            }
+
+            .text-content {
+                display: flex;
+                flex-direction: column;
+                gap: .7rem;
+
+                @media (min-width: 920px) {
+                    width: 60vw;
+                    align-self: center;
+                }
+            }
+
+            .signature {
+                width: 25vw;
+                max-width: 161px;
+                height: 100%;
+                max-height: 4.8rem;
+                object-fit: cover;
+            }
+
+            .category {
+                color: var(--sub-color-3);
+                font-size: .9rem;
+                font-weight: 700;
+                margin-bottom: .6rem;
+            }
+
+            .quote {
+                font-weight: 300;
+                font-style: italic;
+                font-size: 1.2rem;
+            }
+            
+            .paragraph {
+                font-size: .9rem;
+            }
+        }
+        
+        .form-container {
+            width: 100%;
+            box-shadow: 0 0 8px var(--shadow-color);
+            margin-bottom: .5rem;
+            max-width: 470px;
+            align-self: center;
+
+            @media (min-width: 900px) {
+                width: 40%;
+                min-width: 450px;
+                max-width: 470px;
+                align-self: flex-end;
+            }
+
+            & h3 {
+                width: 100%;
+                text-align: center;
+                background-color: var(--main-color);
+                color: var(--sub-color-1);
+                padding: 1.5rem;
+            }
+
+            .callback-form {
+                display: flex;
+                flex-direction: column;
+                gap: 1.4rem;
+                padding: 2rem;
+            }
+
+            .btn-submit {
+                background-color: var(--sub-color-1);
+                color: var(--main-color);
+                font-weight: 700;
+                padding-top: 1.6em;
+                transition: all .2s ease-in-out;
+
+                &:hover, &:focus-visible {
+                    background-color: var(--main-color);
+                    color: var(--sub-color-1);
+                }
+
+                &:active {
+                    background-color: var(--sub-color-1);
+                    color: var(--main-color);
+                }
+            }
+
+            .form-info-text {
+                font-size: .9rem;
+                font-weight: 300;
+                font-style: italic;
+            }
+        }
+    }
+}
+/* #endregion */
